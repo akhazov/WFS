@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.drmun.weather</groupId>
-    <artifactId>weather-service</artifactId>
+    <artifactId>weather.forecast.service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>weather-service</name>
     <description>weather-service</description>
