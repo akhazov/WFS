@@ -6,6 +6,7 @@ import com.drmun.weather.weatherservice.model.openweater.Main;
 import com.drmun.weather.weatherservice.model.openweater.OpenWeatherMapResponse;
 import com.drmun.weather.weatherservice.repository.CurrentWeatherRepository;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -29,6 +30,7 @@ class WeatherEndpointTest {
     private WebTestClient webClient;
 
     @Test
+    @DisplayName("Тест контроллера температуры по городу.")
     void getTempByCity() {
         webClient.get()
                 .uri("/weather/temp?city=" + CITY)
