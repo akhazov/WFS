@@ -27,8 +27,8 @@ class WeatherEndpointTest {
                 .exchange()
                 .expectStatus().isOk()
                 .expectBody()
-                .jsonPath("$.content.details.city").isEqualTo(CITY)
-                .jsonPath("$.content.details.temp").isNotEmpty();
+                .jsonPath("$.details.city").isEqualTo(CITY)
+                .jsonPath("$.details.temp").isNotEmpty();
     }
 
 }
