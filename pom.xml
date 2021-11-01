@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.drmun.weather</groupId>
-    <artifactId>weather-service</artifactId>
+    <artifactId>weather.forecast.service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>weather-service</name>
     <description>weather-service</description>
@@ -18,8 +18,13 @@
         <sonar.organization>akhazov</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <sonar.projectKey>weather.forecast.service</sonar.projectKey>
+        <sonar.coverage.exclusions>**/model/**</sonar.coverage.exclusions>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -103,6 +108,11 @@
                     <plugin>
                         <groupId>org.jacoco</groupId>
                         <artifactId>jacoco-maven-plugin</artifactId>
+                        <configuration>
+                            <excludes>
+                                <exclude>${sonar.coverage.exclusions}</exclude>
+                            </excludes>
+                        </configuration>
                         <executions>
                             <execution>
                                 <goals>
